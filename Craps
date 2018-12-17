@@ -1,0 +1,57 @@
+import java.util.Random;
+public class Craps
+{
+    private int dices, wins, loss;
+    private String name;
+
+    public Craps(){
+dices =0;    
+wins =0;
+loss =0;
+}
+
+ public void Roll() {
+ dices = (int)(6.0*Math.random() + 1.0) + (int)(6.0*Math.random() + 1.0);    
+    if (dices == 2 || dices == 3 || dices == 12) {
+         System.out.println("First roll loss with: " + dices);
+      }
+      else if (dices == 7 || dices == 11) {
+         System.out.println("First roll win with: " + dices);
+      }
+      else { 
+         int point = dices; // point: 4, 5, 6, 8, 9, or 10
+         System.out.println("Point: " + point);
+         while (true) {  // keep rolling
+            dices = (int)(6.0*Math.random() + 1.0) +
+                   (int)(6.0*Math.random() + 1.0);
+            System.out.println("\nNew roll: " + dices);
+            if (dices == point) {
+               System.out.println("Made point, won");
+               wins ++;
+               System.out.println("wins:" + wins);
+               //break;  // break out of loop, a win
+            }
+            if (dices == 7 && dices ==11) {
+               System.out.println("Lost with 7");
+               System.out.println("Lost with 11");
+               loss ++;
+               System.out.println("loss:" + loss);
+               //break;  // break out of loop, a loss
+            }
+            else System.out.println("re-roll");
+         }
+      }
+   }
+   public int getDices(){
+   return dices; 
+   
+}
+public int getWins(){
+  return wins;  
+    
+}
+public int getLoss(){
+return loss;
+} 
+}  
+    
