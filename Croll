@@ -1,0 +1,17 @@
+public class Croll
+{
+public static void main(String[]args){  
+Craps d = new Craps();
+d.Roll();
+d.getDices();
+System.out.println(d.getDices());
+d.getWins();
+System.out.println(d.getDices());
+System.out.println(d.getLoss());    
+    
+    
+    
+    
+    
+}
+}
